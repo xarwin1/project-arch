@@ -45,7 +45,9 @@ pacstrap -K /mnt $PKGS
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-cp part_two.sh /mnt/tmp
+cp part_two.sh /mnt
+
 echo "Part one of installation complete. Please go to the tmp directory with \"cd /tmp\" and
 give the script permission to run with \"chmod u+x part_two.sh\"."
 arch-chroot /mnt
+echo "ParallelDownloads = 5" >> /etc/pacman.conf
