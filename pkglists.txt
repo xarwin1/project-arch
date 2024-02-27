@@ -6,3 +6,9 @@ linux-headers
 vim
 grub
 efibootmgr
+amd-ucode
+intel-ucode
+lightdm
+xfce4
+xfce4-goodies
+networkmanager

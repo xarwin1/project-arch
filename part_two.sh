@@ -32,5 +32,8 @@ useradd -m -G wheel $USERNAME
 passwd $USERNAME
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
+systemctl enable NetworkManager
+systemctl enable lightdm
+
 echo "Installing the bootloader..."
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
