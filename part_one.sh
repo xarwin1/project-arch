@@ -40,4 +40,4 @@ mount $ROOT_PARTITION /mnt
 mount --mkdir $EFI_PARTITION /mnt/boot
 
 echo "Installing packages to new root..."
-pacman -S $PKGS
+pacstrap -K /mnt $PKGS
