@@ -28,10 +28,10 @@ passwd
 echo "Creating a user account"
 echo "Enter a username"
 read USER_NAME
-useradd -m -G $USER_NAME"
+useradd --badname -m -G wheel $USER_NAME"
 
 passwd $USER_NAME
-echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
+echo "%wheel ALL= \(ALL:ALL\) ALL" >> /etc/sudoers
 
 systemctl enable NetworkManager
 systemctl enable lightdm
