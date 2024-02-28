@@ -40,7 +40,7 @@ mount $ROOT_PARTITION /mnt
 mount --mkdir $EFI_PARTITION /mnt/boot
 
 echo "Installing packages to new root..."
-sed -i "s/#ParallelDownloads =5/ParallelDownloads = 5/" /etc/pacman.conf
+sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/" /etc/pacman.conf
 pacstrap -K /mnt $PKGS
 
 genfstab -U /mnt >> /mnt/etc/fstab

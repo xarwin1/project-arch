@@ -27,9 +27,10 @@ passwd
 
 echo "Creating a user account"
 echo "Enter a username"
-read $USERNAME
-useradd -mG wheel $USERNAME
-passwd $USERNAME
+read $USER_NAME
+CREATEUSER="useradd -m -G wheel $USER_NAME"
+eval $CREATEUSER
+passwd $USER_NAME
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
 systemctl enable NetworkManager
