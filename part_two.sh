@@ -28,7 +28,7 @@ passwd
 echo "Creating a user account"
 echo "Enter a username"
 read $USERNAME
-useradd -m -G wheel $USERNAME
+useradd -mG wheel $USERNAME
 passwd $USERNAME
 echo "%wheel ALL=(ALL:ALL) ALL" >> /etc/sudoers
 
@@ -37,3 +37,6 @@ systemctl enable lightdm
 
 echo "Installing the bootloader..."
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+
+echo "Installation finished. You can now reboot your computer."
