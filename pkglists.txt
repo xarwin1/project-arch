@@ -17,6 +17,5 @@ firefox
 bluez
 bluez-utils
 gnome-bluetooth-3.0
-nautilus-bluetooth
 networkmanager
 xdg-user-dirs
