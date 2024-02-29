@@ -28,7 +28,7 @@ passwd
 echo "Creating a user account"
 echo "Enter a username"
 read USER_NAME
-useradd --badname -m -G wheel $USER_NAME"
+useradd -m -G wheel $USER_NAME
 
 passwd $USER_NAME
 echo "%wheel ALL= \(ALL:ALL\) ALL" >> /etc/sudoers
