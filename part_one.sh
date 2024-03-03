@@ -44,9 +44,10 @@ sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/" /etc/pacman.conf
 pacstrap -K /mnt $PKGS
 
 genfstab -U /mnt >> /mnt/etc/fstab
-sed -i "s/#ParallelDownloads =5/ParallelDownloads = 5/" /mnt/etc/pacman.conf
+sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/" /mnt/etc/pacman.conf
 cp part_two.sh /mnt
 
 echo "Part one of installation complete. Please go to the tmp directory with \"cd /tmp\" and
 give the script permission to run with \"chmod u+x part_two.sh\"."
+
 arch-chroot /mnt
